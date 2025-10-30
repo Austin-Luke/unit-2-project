@@ -1,0 +1,31 @@
+<!-- views/members/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= member.name %></title> <!-- Dynamic title based on member name -->
+  </head>
+  <body>
+    <h1><%= member.name %></h1> <!-- Display member name -->
+
+    <!-- Conditional rendering based on member's enrollment -->
+  <% if (member.currentlyEnrolled) { %>
+    <p>This member is enrolled!</p>
+  <% } else { %>
+    <p>This member is not enrolled yet!</p>
+  <% } %>
+  
+    <!-- delete button -->
+<form action="/members/<%=member._id%>?_method=DELETE" method="POST">
+  <button type="submit">Delete <%= member.name %></button>
+</form>
+
+    <!-- edit page link -->
+<a href="/members/<%= member._id %>/edit">Edit <%= member.name %></a>
+
+    <!-- back button -->
+<a href="/members/">Back to Members</a>
+  </body>
+</html>

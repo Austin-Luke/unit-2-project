@@ -1,0 +1,24 @@
+<!-- views/members/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership Index</title>
+</head>
+
+<body>
+    <h1>All Members</h1>
+    <ul>
+        <% members.forEach(member=> { %>
+            <li><a href="/members/<%= member._id %>">
+                    <%= member.name %>
+                </a></li>
+            <% }); %>
+    </ul>
+    <a href="/members/new">Add New Member</a>
+</body>
+
+</html>

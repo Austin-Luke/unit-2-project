@@ -1,0 +1,19 @@
+<!-- views/members/edit.ejs-->
+
+<body>
+
+    <h1>Edit <%= member.name %>
+    </h1>
+    <form action="/members/<%=member._id%>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="<%= member.name %>" />
+
+        <label for="currentlyEnrolled">Ready to enroll?</label>
+        <input type="checkbox" name="currentlyEnrolled" <% if (member.currentlyEnrolled) { %>checked<% } %> >
+
+        <button type="submit">Update Member</button>
+    </form>
+    <a href="/members">Back to Members</a>
+</body>
+
+

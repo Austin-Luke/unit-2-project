@@ -1,0 +1,26 @@
+<!-- views/members/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Member</title>
+</head>
+
+<body>
+    <h1>Create a New Member!</h1>
+    <form action="/members" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+
+        <label for="currentlyEnrolled">Ready to enroll?</label>
+        <input type="checkbox" name="currentlyEnrolled" id="currentlyEnrolled" />
+
+        <button type="submit">Add new member</button>
+    </form>
+    <a href="/members/">Back to Members</a>
+</body>
+
+</html>
