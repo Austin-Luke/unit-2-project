@@ -27,6 +27,8 @@ const methodOverride = require("method-override")
 const morgan = require("morgan")
     // defines logging tool middleware
 
+const path = require("path")
+
 mongoose.connect(process.env.MONGODB_URI)
     // connects to the database using secret string from .env file
 
@@ -58,7 +60,9 @@ app.use(methodOverride("_method"))
     // a logging tool for HTTP requests which provides insights into app behavior
         // hidden now to de-clutter the terminal
 
-
+app.use(express.static(path.join(__dirname, "public")))
+    // middleware for css styling
+    
 // ___________________________________________________________________________________________
 
 
@@ -131,7 +135,7 @@ app.put("/members/:memberId", async (req, res) => {
 })
     // handles 'put' requests sent from the 'edit' form on the 'edit' page
 
-    
+
 // ___________________________________________________________________________________________
 
 
